@@ -8,7 +8,7 @@ export const NoteListHeader = (props) => {
         <div>
             <button onClick={() => {
                 props.meteorCall('notes.insert');
-            }}>Add Note</button>
+            }}>Create Note</button>
         </div>
     );
 };
