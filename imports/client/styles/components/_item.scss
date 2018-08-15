@@ -6,21 +6,48 @@
     overflow-y: scroll;
 }
 
-// Item
-.item {
-    background: $item-bg;
-    border: solid 1px $item-border;
-    margin-bottom: $space;
+.item-list-header {
+    display: flex;
+    flex-direction: column;
     padding: $space;
 }
 
-.item-message {
-    color: $item-text-color;
+// Item
+.item {
+    border-left: solid $item-border-width transparent;
+    cursor: pointer;
+    padding: $space;
+    transition: background-color .3s ease, border-left .3s ease;
 }
 
-.item-status-message {
-    color: $item-text-color;
-    font-style: italic;
-    text-align: center;
+.item:hover {
+    background-color: $light-grey;
+    border-left: solid $item-border-width $grey;
+}
+
+.item-selected, .item-selected:hover {
+    background-color: $light-grey;
+    border-left: solid $item-border-width $brand-primary;
+}
+
+.item-title {
+    font-weight: normal;
+    font-size: $base-font-size;
+    margin-bottom: .4rem;
+}
+
+.item-selected .item-title {
+    font-weight: bold;
+}
+
+.item-subtitle {
+    color: $dark-grey;
     margin: 0;
+}
+
+// Empty Item
+.empty-item {
+    font-style: italic;
+    padding: $space;
+    text-align: center;
 }
